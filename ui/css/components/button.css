@@ -1,0 +1,30 @@
+﻿.btn {
+    border: none;
+    background-color: #019160;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 13px;
+    color: #ffffff;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    display: inline-block;
+    line-height: 40px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    outline: none;
+}
+
+    .btn:hover {
+        background-color: #2FBE8E;
+    }
+
+    .btn:active {
+        background-color: #01B075;
+    }
+
+.icon-add {
+    background-image: url('../../content/icon/add.png');
+}
+
+    

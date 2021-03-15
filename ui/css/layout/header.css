@@ -1,0 +1,71 @@
+﻿.header {
+    position: absolute;
+    left: 226px;
+    top: 0;
+    width: calc(100% - 226px);
+    height: 48px;
+    display: flex;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+    .header .header-content {
+        align-items: center;
+        font-family: GoogleSans-Bold;
+        margin-left: 16px;
+        cursor: pointer;
+        display: flex;
+    }
+        .header .header-content .header-content-text {
+
+        }
+
+        .header .header-content .header-content-icon {
+            height: 12px;
+            width: 12px;
+            margin-left: 10px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('../../content/icon/dropdown-icon.png');
+            flex-shrink: 0;
+        }
+
+    .header .header-user {
+        align-items: center;
+        position: absolute;
+        display: flex;
+        right: 0;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
+        .header .header-user .header-user-option {
+            width: 24px;
+            height: 24px;
+            margin-right: 16px;
+            flex-shrink: 0;
+            background-image: url('../../content/icon/option.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .header .header-user .header-username {
+            margin-right: 16px;
+            font-family: GoogleSans-Bold;
+        }
+
+        .header .header-user .header-user-avatar {
+            width: 24px;
+            height: 24px;
+            margin-right: 16px;
+            background-image: url('../../content/icon/avatar-default.png');
+            flex-shrink: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+@font-face {
+    font-family: 'GoogleSans-Bold';
+    src: url('../../content/font/GoogleSans-Bold.otf') format('opentype');
+}

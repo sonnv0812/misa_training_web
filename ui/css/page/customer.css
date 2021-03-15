@@ -1,0 +1,31 @@
+.page-header {
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    height:40px;
+    align-items:center;
+}
+
+    .page-header .btnAddCustomer {
+        position: absolute;
+        right: 24px;
+    }
+
+.page-toolbar {
+    height: 40px;
+    width: 100%;
+}
+
+.table {
+
+}
+
+.table-paging {
+    position: absolute;
+    bottom: 0;
+    right: 24px;
+    left: 24px;
+    height: 56px;
+    border-top: 4px solid #C5C5C5;
+}

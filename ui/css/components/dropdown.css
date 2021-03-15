@@ -1,0 +1,11 @@
+﻿.dropdown {
+    border-radius: 4px;
+    border: 1px;
+    border-color: #BBBBBB;
+    height: 40px;
+    font-size: 13px;
+    color: #000000;
+}
+    .dropdown:hover {
+
+    }
