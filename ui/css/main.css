@@ -1,6 +1,7 @@
 ﻿@import url('components/button.css');
 @import url('components/field-input.css');
 @import url('components/dropdown.css');
+@import url('components/dialog.css');
 
 body {
     margin: 0;
