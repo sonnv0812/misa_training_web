@@ -1,10 +1,10 @@
 ﻿.header {
     position: absolute;
-    left: 226px;
+    left: 200px;
     top: 0;
-    width: calc(100% - 226px);
-    height: 48px;
+    height: 60px;
     display: flex;
+    right: 0;
     border-bottom: 1px solid #bbbbbb;
 }
 
@@ -31,11 +31,12 @@
 
     .header .header-user {
         align-items: center;
-        position: absolute;
+        right: 0;
         display: flex;
         right: 0;
-        margin-bottom: 12px;
-        margin-top: 12px;
+        cursor: pointer;
+        position: absolute;
+        transform: translate(0, 50%);
     }
 
         .header .header-user .header-user-option {

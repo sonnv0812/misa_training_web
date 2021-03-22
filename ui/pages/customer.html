@@ -11,34 +11,30 @@
 </head>
 
 <body>
-    <div class="navbar">
+    <!--Navbar-->
+    <div id="navbar">
         <div class="logo-box">
-            <div class="toggle"></div>
-            <div class="logo-page"></div>
+            <div class="sidebar"></div>
+            <div class="logo"></div>
         </div>
-        <div class="navbar-content">
-            <a class="navbar-item" href="#">
-                <div class="navbar-item-icon icon-dashboad"></div>
-                <div class="navbar-item-text">Tổng quan</div>
+        <div class="navbar-box">
+            <a class="navbar-item">
+                <div class="navbar-icon icon-dashboard"></div>
+                <div class="navbar-text">Tổng quan</div>
+            </a>
+            <a class="navbar-item">
+                <div class="navbar-icon icon-report"></div>
+                <div class="navbar-text">Báo cáo</div>
             </a>
             <a class="navbar-item" href="#">
-                <div class="navbar-item">
-                    <div class="navbar-item-icon icon-report"></div>
-                    <div class="navbar-item-text">Báo cáo</div>
-                </div>
+                <div class="navbar-icon icon-dic-employee"></div>
+                <div class="navbar-text">Danh sách khách hàng</div>
             </a>
-            <a class="navbar-item" href="#">
-                <div class="navbar-item-icon icon-dashboad"></div>
-                <div class="navbar-item-text">Mua hàng</div>
+            <a class="navbar-item">
+                <div class="navbar-icon icon-setting"></div>
+                <div class="navbar-text">Cài đặt</div>
             </a>
-            <a class="navbar-item" href="#">
-                <div class="navbar-item-icon icon-dictionary-customer"></div>
-                <div class="navbar-item-text">Danh mục khách hàng</div>
-            </a>
-            <a class="navbar-item" href="#">
-                <div class="navbar-item-icon icon-setting"></div>
-                <div class="navbar-item-text">Thiết lập hệ thống</div>
-            </a>
+
         </div>
     </div>
     <div class="header">
@@ -52,103 +48,111 @@
             <div class="header-user-option"></div>
         </div>
     </div>
-    <div class="content">
-        <div class="page-header">
-            <div class="page-title">Danh sách khách hàng</div>
-            <button class="btnAddCustomer btn">Thêm khách hàng</button>
+    <div id="content">
+        <div class="page-title">
+            <div class="page-left">Danh sách khách hàng</div>
+            <div class="page-right">
+                <button id="btnAdd" class="btn-default">Thêm khách hàng</button>
+            </div>
         </div>
-        <div class="page-toolbar">
-            <input class="txtSearch" type="text" placeholder="Tìm kiếm theo Mã khách hàng hoặc họ và tên" />
-            <button class="btnRefresh"></button>
+        <div class="toolbar">
+            <input type="text" class="input-search" style="width: 220px;" placeholder="Tìm kiếm theo mã, tên khách hàng" />
+            <button class="btn-refresh"></button>
         </div>
         <div class="grid">
-            <table width="100%" border="0">
+            <table id="tblListCustomer" class="table" width="100%" border="0">
                 <thead>
                     <tr>
-                        <th>Mã Khách Hàng</th>
+                        <th>Mã khách hàng</th>
                         <th>Họ và tên</th>
                         <th>Giới tính</th>
                         <th>Ngày sinh</th>
                         <th>Nhóm khách hàng</th>
                         <th>Điện thoại</th>
                         <th>Email</th>
-                        <th>Địa chỉ</th>
-                        <th>Số tiền nợ</th>
-                        <th>Mã thẻ thành viên</th>
+                        <th class="text-align-right">Số tiền nợ</th>
+                        <th class="text-align-center">Đang hoạt động</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>M00001</td>
-                        <td>Nguyễn Văn Sơn</td>
+                        <td>KH0001</td>
+                        <td>Nguyễn Văn Mạnh</td>
                         <td>Nam</td>
-                        <td>26/07/99</td>
-                        <td>Khách VIP</td>
-                        <td>0123456789</td>
-                        <td>example@gmail.com</td>
-                        <td>Số 1 Đại Cồ Việt</td>
-                        <td></td>
-                        <td>MSI123456</td>
-                    </tr>
-                    <tr>
-                        <td>M00001</td>
-                        <td>Nguyễn Văn Sơn</td>
-                        <td>Nam</td>
-                        <td>26/07/99</td>
-                        <td>Khách VIP</td>
-                        <td>0123456789</td>
-                        <td>example@gmail.com</td>
-                        <td>Số 1 Đại Cồ Việt</td>
-                        <td></td>
-                        <td>MSI123456</td>
-                    </tr>
-                    <tr>
-                        <td>M00001</td>
-                        <td>Nguyễn Văn Sơn</td>
-                        <td>Nam</td>
-                        <td>26/07/99</td>
-                        <td>Khách VIP</td>
-                        <td>0123456789</td>
-                        <td>example@gmail.com</td>
-                        <td>Số 1 Đại Cồ Việt</td>
-                        <td></td>
-                        <td>MSI123456</td>
-                    </tr>
-                    <tr>
-                        <td>M00001</td>
-                        <td>Nguyễn Văn Sơn</td>
-                        <td>Nam</td>
-                        <td>26/07/99</td>
-                        <td>Khách VIP</td>
-                        <td>0123456789</td>
-                        <td>example@gmail.com</td>
-                        <td>Số 1 Đại Cồ Việt</td>
-                        <td></td>
-                        <td>MSI123456</td>
+                        <td>22/09/1999</td>
+                        <td>VIP</td>
+                        <td>0961179969</td>
+                        <td>manhnv229@gmail.com</td>
+                        <td class="text-align-right">1.025.000</td>
+                        <td class="text-align-center"><input type="checkbox" checked></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <div class="table-paging">
-            <div class="paging-content">Hiển thị 1-10/1000 Khách hàng</div>
-            <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#">&lsaquo;</a>
-                <a href="#">1</a>
-                <a href="#" class="active">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">&rsaquo;</a>
-                <a href="#">&raquo;</a>
-            </div>
-            <div class="number-one-page">10 Khách hàng/trang</div>
+        <div class="paging">
+            <div data-v-a72348a4="" class="paging-bar"><div data-v-a72348a4="" class="paging-record-info">Hiển thị <b data-v-a72348a4="">1-10/1000</b> nhân viên</div><div data-v-a72348a4="" class="paging-option"><div data-v-a72348a4="" class="btn-select-page m-btn-firstpage"></div><div data-v-a72348a4="" class="btn-select-page m-btn-prev-page"></div><div data-v-a72348a4="" class="m-btn-list-page"><button data-v-a72348a4="" class="btn-pagenumber btn-pagenumber-selected">1</button><button data-v-a72348a4="" class="btn-pagenumber">2</button><button data-v-a72348a4="" class="btn-pagenumber">3</button><button data-v-a72348a4="" class="btn-pagenumber">4</button></div><div data-v-a72348a4="" class="btn-select-page m-btn-next-page"></div><div data-v-a72348a4="" class="btn-select-page m-btn-lastpage"></div></div><div data-v-a72348a4="" class="paging-record-option"><b data-v-a72348a4="">10</b> nhân viên/trang</div></div>
         </div>
     </div>
-    <div class="dialog" hidden="hidden">
-        <div class="modal"></div>
-        <div class="dialog-box"></div>
+    <div id="dlgCustomerDetail" class="dialog">
+        <div class="model"></div>
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <div class="dialog-title">THÔNG TIN KHÁCH HÀNG</div>
+                <div class="dialog-close-button">&#x2715;</div>
+            </div>
+            <div class="dialog-body">
+                <div class="m-row">
+                    <div class="m-col">
+                        <label>Mã khách hàng</label>
+                        <input id="txtCustomerCode" type="text" />
+                    </div>
+                    <div class="m-col">
+                        <label>Họ và tên</label>
+                        <input id="txtFullName" type="text" />
+                    </div>
+                </div>
+                <div class="m-row">
+                    <div class="m-col">
+                        <label>Nhóm khách hàng</label>
+                        <select id="cbCustomerGroup">
+                            <option value="0cb5da7c-59cd-4953-b17e-c9adc9161663">Nhóm khách hàng MISA</option>
+                            <option value="19165ed7-212e-21c4-0428-030d4265475f">Khách VIP</option>
+                            <option value="3631011e-4559-4ad8-b0ad-cb989f2177da">Khách vãng lai</option>
+                            <option value="7a0b757e-41eb-4df6-c6f8-494a84b910f4">Khách thường</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="m-row">
+                    <div class="m-col">
+                        <label>Giới tính</label>
+                        <select id='cbGender'>
+                            <option value="1">Nam</option>
+                            <option value="0">Nữ</option>
+                            <option value="2">Không xác định</option>
+                        </select>
+                    </div>
+                    <div class="m-col">
+                        <label>Ngày sinh</label>
+                        <input id="dtDateOfBirth" type="date" />
+                    </div>
+                </div>
+                <div class="m-row">
+                    <div class="m-col">
+                        <label>Số điện thoại</label>
+                        <input id="txtPhoneNumber" type="text" />
+                    </div>
+                    <div class="m-col">
+                        <label>Email</label>
+                        <input id="txtEmail" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button id="btnSave" class="btn-default">Lưu</button>
+            </div>
+        </div>
     </div>
+    <script src="../../lib/jquery-3.6.0.min.js"></script>
+    <script src="../../js/page/cusomter.js"></script>
 </body>
 </html>
