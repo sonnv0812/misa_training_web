@@ -45,6 +45,23 @@
             cursor: pointer;
         }
 
+    .dialog .dialog-close-notify {
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 0 4px 0 4px;
+    }
+
+        .dialog .dialog-close-notify:hover {
+            background-color: #bbb;
+            cursor: pointer;
+        }
+
 .dialog-hide {
     display: none;
 }
@@ -60,9 +77,42 @@
     border-radius: 0 0 4px 4px;
     left: 0;
     right: 0;
+    justify-content: space-between;
 }
 
     .dialog .dialog-footer button {
         position: absolute;
         right: 24px;
     }
+
+    .dialog .dialog-footer #btnDelete {
+        position: absolute;
+        right: 110px;
+    }
+
+    .dialog .dialog-footer #btnYes {
+        position: absolute;
+        right: 24px;
+    }
+
+    .dialog .dialog-footer #btnNo {
+        position: absolute;
+        right: 100px;
+    }
+
+    .dialog .dialog-footer #btnCancel {
+        position: absolute;
+        right: 196px;
+    }
+
+.dialog .notify {
+    padding: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding-bottom: 80px;
+}

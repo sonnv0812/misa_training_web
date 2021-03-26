@@ -3,22 +3,33 @@
     loadData(1);
 })
 
+var action = 1; // 1-add, 2-edit
+var customerId;
 
 function setEvent() {
     // Gán sự kiện cho button Add:
     $("#btnAdd").click(function () {
         // Hiển thị form thêm mới:
+        $('#dlgCustomerDetail input').val(null);
+        $('#dlgCustomerDetail select').val(null);
         $('#dlgCustomerDetail').removeClass('dialog-hide');
+        action = 1;
+
     })
 
     $('.dialog-close-button').click(function () {
         $('#dlgCustomerDetail').addClass('dialog-hide');
     })
 
+    $('.dialog-close-notify').click(function () {
+        $('#dlgNotify').addClass('dialog-hide');
+    })
 
     $(document).on('dblclick', '#tblListCustomer tbody tr', function () {
+        action = 2;
         $('#dlgCustomerDetail').removeClass('dialog-hide');
         var recordId = $(this).data('recordId');
+        customerId = recordId;
         $.ajax({
             method: "GET",
             url: `http://api.manhnv.net/api/customers/${recordId}`,
@@ -40,46 +51,83 @@ function setEvent() {
         // binding dữ liệu thông tin khách hàng:
     });
 
-
     $(document).on('click', '#btnSave', function () {
         // Thu thập các thông tin của khách hàng đã nhập liệu:
-        debugger
-        var customerCode = $('#txtCustomerCode').val();
-        var fullName = document.getElementById("txtFullName").value;
-        var newCustomer = {
-            "CustomerCode": customerCode,
-            "FullName": fullName,
-            "Gender": 0,
-            "Address": "Cantho3",
-            "Email": "ab9@gmail.com",
-            "PhoneNumber": "911111119",
-            "MemberCardCode": "fsdafasdfdsa",
-            "CompanyName": "Mía2",
-            "CustomerGroupName": "Nhóm khách hàng MISA",
-            "GenderName": "Không xác định",
-            "MISAEntityState": 0
+        var customer = {
+            "CustomerId": customerId,
+            "CustomerCode": $('#txtCustomerCode').val(),
+            "FullName": $('#txtFullName').val(),
+            "CustomerGroupId": $('#cbCustomerGroup').val(),
+            "Gender": $('#cbGender').val(),
+            "Email": $('#txtEmail').val(),
+            "PhoneNumber": $('#txtPhoneNumber').val(),
+            "DateOfBirth": $('#dtDateOfBirth').val()
+        }
+        console.log(customer);
+        var method = "POST";
+        var url = "http://api.manhnv.net/api/customers/";
+        if (action === 2) {
+            method = "PUT";
+            url = url + customerId;
         }
         // Gọi service để lưu lại:
         $.ajax({
-            method: "POST",
-            url: "http://api.manhnv.net/api/customers",
-            data: JSON.stringify(newCustomer),
+            method: method,
+            url: url,
+            data: JSON.stringify(customer),
             async: false,
             contentType: "application/json"
         }).done(function (response) {
-            alert('thêm thành công!');
+            doneApi();
         }).fail(function (response) {
-            alert('Không thêm được!');
+            alert('Không thực hiện được!');
         })
     });
 
+    $(document).on('click', '#btnDelete', function () {
+        $('#dlgNotify').removeClass('dialog-hide');
+    });
+
+    $('#btnCancel').click(function () {
+        $('#dlgNotify').addClass('dialog-hide');
+    })
+
+    $('#btnNo').click(function () {
+        $('#dlgNotify').addClass('dialog-hide');
+    })
+
+    $('#btnYes').click(function () {
+        $.ajax({
+            method: "DELETE",
+            url: "http://api.manhnv.net/api/customers/" + customerId,
+            contentType: "application/json"
+        }).done(function (response) {
+            alert("Xoá thành công");
+            $('#dlgNotify').addClass('dialog-hide');
+            $('#dlgCustomerDetail').addClass('dialog-hide');
+            loadData();
+        }).fail(function (response) {
+            alert("Xoá thất bại");
+        })
+    });
+}
+
+function doneApi() {
+    if (action === 1) {
+        alert('Thêm thành công');
+    } else {
+        alert('Sửa thành công');
+    }
+    loadData();
+    $('#dlgCustomerDetail').addClass('dialog-hide');
+    
 }
 
 /**
  * Load dữ liệu khách hàng
  * */
 function loadData() {
-
+    $('#tblListCustomer tbody').empty();
     // lấy dữ liệu từ Api về;
     var data = getData();
     console.table(data);
@@ -114,7 +162,6 @@ function buildDataTableHTML(data) {
     //$('table#tblListCustomer tbody').html('');
     $.each(data, function (index, customer) {
         var dateOfBirth = customer.DateOfBirth;
-        debugger;
         var dateFormat = formatDateDDMMYYYY(dateOfBirth);
         // Xử lý dữ liệu ngày tháng (Hiển thị dạng ngày/tháng/năm - nếu có):
         var debitAmout = Math.floor(Math.random() * 100000000);

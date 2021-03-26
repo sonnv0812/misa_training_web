@@ -93,7 +93,7 @@
             <div data-v-a72348a4="" class="paging-bar"><div data-v-a72348a4="" class="paging-record-info">Hiển thị <b data-v-a72348a4="">1-10/1000</b> nhân viên</div><div data-v-a72348a4="" class="paging-option"><div data-v-a72348a4="" class="btn-select-page m-btn-firstpage"></div><div data-v-a72348a4="" class="btn-select-page m-btn-prev-page"></div><div data-v-a72348a4="" class="m-btn-list-page"><button data-v-a72348a4="" class="btn-pagenumber btn-pagenumber-selected">1</button><button data-v-a72348a4="" class="btn-pagenumber">2</button><button data-v-a72348a4="" class="btn-pagenumber">3</button><button data-v-a72348a4="" class="btn-pagenumber">4</button></div><div data-v-a72348a4="" class="btn-select-page m-btn-next-page"></div><div data-v-a72348a4="" class="btn-select-page m-btn-lastpage"></div></div><div data-v-a72348a4="" class="paging-record-option"><b data-v-a72348a4="">10</b> nhân viên/trang</div></div>
         </div>
     </div>
-    <div id="dlgCustomerDetail" class="dialog">
+    <div id="dlgCustomerDetail" class="dialog dialog-hide">
         <div class="model"></div>
         <div class="dialog-content">
             <div class="dialog-header">
@@ -149,6 +149,21 @@
             </div>
             <div class="dialog-footer">
                 <button id="btnSave" class="btn-default">Lưu</button>
+                <button id="btnDelete" class="btn-default">Xoá</button>
+            </div>
+        </div>
+    </div>
+    <div id="dlgNotify" class="dialog dialog-hide">
+        <div class="model"></div>
+        <div class="notify">
+            <div class="dialog-header">
+                <div class="dialog-title">Bạn có chắc là muốn xoá chứ?</div>
+                <div class="dialog-close-notify">&#x2715;</div>
+            </div>
+            <div class="dialog-footer">
+                <button id="btnYes" class="btn-default">Có</button>
+                <button id="btnNo" class="btn-default">Không</button>
+                <button id="btnCancel" class="btn-default">Huỷ</button>
             </div>
         </div>
     </div>
