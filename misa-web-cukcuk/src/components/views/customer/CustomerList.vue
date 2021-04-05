@@ -31,10 +31,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>KH0001</td>
-              <td>Nguyễn Văn Mạnh</td>
-              <td>Nam</td>
+            <tr  v-for="customer in customers" :key="customer.CustomerId" >
+              <td>{{ customer.CustomerCode }}</td>
+              <td>{{ customer.FullName }}</td>
+              <td>{{ customer.Gender }}</td>
               <td>22/09/1999</td>
               <td>VIP</td>
               <td>0961179969</td>
@@ -53,28 +53,15 @@
             Hiển thị <b data-v-a72348a4="">1-10/1000</b> nhân viên
           </div>
           <div data-v-a72348a4="" class="paging-option">
-            <div
-              data-v-a72348a4=""
-              class="btn-select-page m-btn-firstpage"
-            ></div>
-            <div
-              data-v-a72348a4=""
-              class="btn-select-page m-btn-prev-page"
-            ></div>
+            <div data-v-a72348a4="" class="btn-select-page m-btn-firstpage"></div>
+            <div data-v-a72348a4="" class="btn-select-page m-btn-prev-page"></div>
             <div data-v-a72348a4="" class="m-btn-list-page">
-              <button
-                data-v-a72348a4=""
-                class="btn-pagenumber btn-pagenumber-selected"
-              >
-                1</button
-              ><button data-v-a72348a4="" class="btn-pagenumber">2</button
-              ><button data-v-a72348a4="" class="btn-pagenumber">3</button
-              ><button data-v-a72348a4="" class="btn-pagenumber">4</button>
+              <button data-v-a72348a4="" class="btn-pagenumber btn-pagenumber-selected">1</button>
+              <button data-v-a72348a4="" class="btn-pagenumber">2</button>
+              <button data-v-a72348a4="" class="btn-pagenumber">3</button>
+              <button data-v-a72348a4="" class="btn-pagenumber">4</button>
             </div>
-            <div
-              data-v-a72348a4=""
-              class="btn-select-page m-btn-next-page"
-            ></div>
+            <div data-v-a72348a4="" class="btn-select-page m-btn-next-page"></div>
             <div
               data-v-a72348a4=""
               class="btn-select-page m-btn-lastpage"
@@ -85,14 +72,34 @@
           </div>
         </div>
       </div>
+      <CustomerDetail/>
   </div>
 </template>
 
+<script>
+import axios from 'axios'
+import CustomerDetail from './CustomerDetail'
+export default {
+  CustomerDetail,
+  created() {
+    axios.get("http://api.manhnv.net/api/customers").then((response) => {
+      this.customers = response.data;
+    });
+  },
+  data() {
+    return {
+      customers : []
+    }
+  },
+}
+</script>
+
+
 <style scoped>
     .page-title {
-    height: 40px;
-    display: flex;
-    align-items: center;
+      height: 40px;
+      display: flex;
+      align-items: center;
     }
 
         .page-title .page-right {
@@ -106,70 +113,70 @@
         }
 
     .toolbar {
-    margin-top: 16px;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    height: 42px;
-    /* background-color: #ff0000; */
+      margin-top: 16px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      height: 42px;
+      /* background-color: #ff0000; */
     }
 
     .grid {
-    position: absolute;
-    right: 24px;
-    left: 24px;
-    bottom: 60px;
-    top: 128px;
-    overflow-y: auto;
+      position: absolute;
+      right: 24px;
+      left: 24px;
+      bottom: 60px;
+      top: 128px;
+      overflow-y: auto;
     }
 
     .paging {
-    position: absolute;
-    bottom: 0;
-    height: 60px;
-    left: 24px;
-    right: 24px;
+      position: absolute;
+      bottom: 0;
+      height: 60px;
+      left: 24px;
+      right: 24px;
     }
 
     .m-col {
-    width: 50%;
-    float: left;
-    padding: 0 4px;
-    box-sizing: border-box;
+      width: 50%;
+      float: left;
+      padding: 0 4px;
+      box-sizing: border-box;
     }
 
     .m-row {
-    width: 100%;
-    display: flex;
-    margin-top: 8px;
-    position: relative;
+      width: 100%;
+      display: flex;
+      margin-top: 8px;
+      position: relative;
     }
 
     .m-row label {
-    display: block;
+      display: block;
     }
 
     .m-row input,
     select {
-    margin-top: 4px;
+      margin-top: 4px;
     }
 
     .btn-default {
-    display: inline-block;
-    outline: none;
-    border: none;
-    padding-left: 24px;
-    padding-right: 24px;
-    height: 40px;
-    line-height: 40px;
-    background-color: #019160;
-    border-radius: 4px;
-    font-size: 13px;
-    color: #ffffff;
-    font-style: normal;
-    cursor: pointer;
-    text-align: center;
-}
+      display: inline-block;
+      outline: none;
+      border: none;
+      padding-left: 24px;
+      padding-right: 24px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #019160;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #ffffff;
+      font-style: normal;
+      cursor: pointer;
+      text-align: center;
+    }
 
     .btn-default:hover {
         background-color: #2FBE8E;
@@ -188,12 +195,11 @@
     cursor: pointer;
     outline: none;
     border-radius: 4px;
-    background-image: url('../../assets/icon/refresh.png');
+    background-image: url('../../../assets/icon/refresh.png');
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
 }
-
 
 table {
     border-collapse: collapse;
@@ -285,7 +291,7 @@ input[type=text], input[type=date] {
     }
 
 input[type=text].input-search {
-        background-image: url('../../assets/icon/search.png');
+        background-image: url('../../../assets/icon/search.png');
         background-repeat: no-repeat;
         background-position-y: center;
         background-position-x: 16px;

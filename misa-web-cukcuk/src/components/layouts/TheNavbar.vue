@@ -13,10 +13,22 @@
         <div class="navbar-icon icon-report"></div>
         <div class="navbar-text">Báo cáo</div>
       </a>
-      <a class="navbar-item">
+      <router-link to="/customer" class="navbar-item">
+        <div class="navbar-icon icon-dic-employee"></div>
+        <div class="navbar-text">Danh sách khách hàng</div>
+      </router-link>
+      <router-link to="/employee" class="navbar-item">
+        <div class="navbar-icon icon-dic-employee"></div>
+        <div class="navbar-text">Danh sách nhân viên</div>
+      </router-link>
+      <!-- <a class="navbar-item">
         <div class="navbar-icon icon-dic-employee"></div>
         <div class="navbar-text">Danh sách khách hàng</div>
       </a>
+      <a class="navbar-item">
+        <div class="navbar-icon icon-dic-employee"></div>
+        <div class="navbar-text">Danh sách nhân viên</div>
+      </a> -->
       <a class="navbar-item">
         <div class="navbar-icon icon-setting"></div>
         <div class="navbar-text">Cài đặt</div>

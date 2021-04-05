@@ -1,18 +1,16 @@
 <template>
   <div>
     <div id="content">
-      <Customer/>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import Customer from '../pages/Customer.vue';
 
 export default ({
   
   components: {
-    Customer
   },
 
 })
