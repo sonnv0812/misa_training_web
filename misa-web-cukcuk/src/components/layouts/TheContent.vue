@@ -7,9 +7,8 @@
 </template>
 
 <script>
-
 export default ({
-  
+
   components: {
   },
 
@@ -17,6 +16,8 @@ export default ({
 </script>
 
 <style scoped>
+@import url("../style/main.css");
+
 #content {
   position: absolute;
   top: 60px;
@@ -27,4 +28,5 @@ export default ({
   /* padding-left:  24px; */
   padding: 24px;
 }
+
 </style>

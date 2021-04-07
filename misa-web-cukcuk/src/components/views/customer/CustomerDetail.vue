@@ -66,7 +66,7 @@
 <script>
 export default {
     props: { 
-       
+
         customerId: { type: String, default: null },
         },
     methods: {

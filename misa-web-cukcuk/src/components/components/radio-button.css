@@ -1,0 +1,44 @@
+﻿.container {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+.checkmark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #019160;
+}
+
+.container input:checked ~ .checked {
+    background-color: #fff;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #019160;
+}

@@ -1,0 +1,157 @@
+﻿.dialog .model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: .4;
+}
+
+.dialog .dialog-content {
+    padding: 24px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 900px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding-bottom: 80px;
+}
+
+    .dialog .dialog-title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .dialog .dialog-close-button {
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 0 4px 0 4px;
+    }
+
+        .dialog .dialog-close-button:hover {
+            background-color: #bbb;
+            cursor: pointer;
+        }
+
+    .dialog .dialog-close-notify {
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 0 4px 0 4px;
+    }
+
+        .dialog .dialog-close-notify:hover {
+            background-color: #bbb;
+            cursor: pointer;
+        }
+
+.dialog-hide {
+    display: none;
+}
+
+
+.dialog .dialog-footer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    background-color: #e5e5e5;
+    height: 56px;
+    border-radius: 0 0 4px 4px;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+}
+
+    .dialog .dialog-footer button {
+        position: absolute;
+        right: 24px;
+    }
+
+    .dialog .dialog-footer #btnDelete {
+        position: absolute;
+        right: 110px;
+    }
+
+    .dialog .dialog-footer #btnYes {
+        position: absolute;
+        right: 24px;
+    }
+
+    .dialog .dialog-footer #btnNo {
+        position: absolute;
+        right: 100px;
+    }
+
+    .dialog .dialog-footer #btnCancel {
+        position: absolute;
+        right: 196px;
+    }
+
+.dialog .notify {
+    padding: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding-bottom: 80px;
+}
+
+.dialog-body {
+    display: flex;
+}
+
+.dialog-content-.dialog-img {
+    position: absolute;
+    left: 0;
+}
+
+    .dialog-img .img-add {
+        border-radius: 50%;
+        border: 1px solid #bbbbbb;
+        width: 250px;
+        height: 250px;
+        margin: 10px 10px 10px 0px;
+        flex-shrink: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-image: url('../../assets/img/default-avatar.jpg');
+    }
+
+    .dialog-img .img-content {
+        text-align: center;
+    }
+
+    .img-format {
+        text-align: center;
+    }
+
+    .dialog .notify {
+        padding: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        padding-bottom: 80px;
+    }
